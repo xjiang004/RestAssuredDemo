@@ -23,8 +23,8 @@ public class RestAssuredDemo {
 	public void test() {
 		given().param("", "").
 		when()
-			.get("https://news.baidu.com/").prettyPeek();
-//		then().log().all();
+			.get("https://news.baidu.com/")
+		.then().statusCode(200);
 	
 //		System.out.print("aaaaaaaaaaaa");
 //		assertTrue("a", true);
@@ -32,7 +32,7 @@ public class RestAssuredDemo {
 	
 	@Test
 	public void baidu(){
-				
+		System.out.print("aaaaaaaaaaaa");		
 	}
 
 }

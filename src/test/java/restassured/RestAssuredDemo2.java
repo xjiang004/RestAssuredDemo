@@ -16,7 +16,8 @@ public class RestAssuredDemo2 {
 		map.put("topics", "topics");
 		map.put("topicid", 12192);
 		
-		get("https://testerhome.com/{topics}/{topicid}", map).prettyPeek();
+		get("https://testerhome.com/{topics}/{topicid}", map)
+		.then().statusCode(200);
 	}
 	
 	@Test
@@ -31,11 +32,11 @@ public class RestAssuredDemo2 {
 	
 	@Test
 	public void testJson(){
-		when().get("https://testerhome.com/api/v3/topics.json").prettyPeek()
+		when().get("https://testerhome.com/api/v3/topics.json")
 		.then()
 			.statusCode(200)
 			.body("topics.id[0]", equalTo(12869))
-			.time(lessThan(1000L))
+			.time(lessThan(2000L))
 			;
 	}
 }

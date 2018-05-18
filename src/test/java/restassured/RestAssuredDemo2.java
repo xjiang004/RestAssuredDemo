@@ -21,16 +21,6 @@ public class RestAssuredDemo2 {
 	}
 	
 	@Test
-	public void testPost(){
-		given()
-			.param("user[login]", "l_smile")
-			.param("user[password]", "min0601")
-		.when()
-			.post("https://testerhome.com/account/sign_in")
-		.then().statusCode(302);
-	}
-	
-	@Test
 	public void testJson(){
 		when().get("https://testerhome.com/api/v3/topics.json")
 		.then()
